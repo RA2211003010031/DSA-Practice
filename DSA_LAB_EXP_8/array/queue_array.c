@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <limits.h>
 #include "queue_array.h"
 struct Queue* createQueue(unsigned capacity)
 {
