@@ -7,10 +7,14 @@ int main() {
     int arr[5] = {5,4,3,2,1};
 
     for(int i = 0; i<5-1; i++) {
-        for(int j = i+1; j<5; j++) {
-            if(arr[i] > arr[j]) {
-                swap(arr[i],arr[j]);
+        int minIndex;
+        for(int j = i; j<5; j++) {
+            if(arr[i]>arr[j]) {
+                minIndex = j;
             }
+        }
+        if(arr[i]>arr[minIndex]) {
+            swap(arr[i],arr[minIndex]);
         }
     }
 
