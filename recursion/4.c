@@ -16,21 +16,25 @@ void reverse(int s, int arr[], int n) {
 
 void main() {
 
-    int n = 5;
-    int arr[5] = {5,4,3,2,1};
+    // int n = 5;
+    // int arr[5] = {5,4,3,2,1};
 
-    printf("Before reversing:\n");
-    for (int i = 0; i < n; i++)
-    {
-        printf("%d\t", arr[i]);
-    }
+    // printf("Before reversing:\n");
+    // for (int i = 0; i < n; i++)
+    // {
+    //     printf("%d\t", arr[i]);
+    // }
 
-    reverse(0,arr,n);
+    // reverse(0,arr,n);
 
-    printf("After reversing:\n");
-    for (int i = 0; i < n; i++)
-    {
-        printf("%d\t", arr[i]);
-    }
+    // printf("After reversing:\n");
+    // for (int i = 0; i < n; i++)
+    // {
+    //     printf("%d\t", arr[i]);
+    // }
+
+    char letter[] = "MADAM";
+
+    char reverse[] = reverse(0,letter,5);
     
 }
