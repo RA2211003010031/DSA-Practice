@@ -1,7 +1,6 @@
 #include<iostream>
-#include<algorithm>
 #include<vector>
-
+#include<algorithm>
 using namespace std;
 
 class Node{
@@ -9,8 +8,9 @@ class Node{
     int data;
     Node* next;
 
+    public:
     Node(int data1, Node* next1) {
-        data =  data1;
+        data = data1;
         next = next1;
     }
 
@@ -18,27 +18,55 @@ class Node{
         data = data1;
         next = nullptr;
     }
-};
+}; 
 
-Node* convertArrToLL(vector<int>arr) {
+Node* convert_arr_to_LL(vector<int>arr) {
+    int n = arr.size();
+
     Node* head = new Node(arr[0]);
     Node* mover = head;
 
-    for(int i = 1; i < arr.size(); i++) {
+    for(int i = 1; i < n; i++) {
         Node* temp = new Node(arr[i]);
         mover->next = temp;
         mover = temp;
     }
 
+    cout<<"Head from arr = "<<head->data<<endl;
+
     return head;
 }
 
+Node* delete_head(Node* head) {
+    Node* temp = head;
+    head = head->next;
+
+    delete(temp);
+
+    return head;
+}
+
+Node* traversal_in_LL(Node* head) {
+    Node* temp = head;
+
+    while(temp) {
+        cout<<temp->data;
+        temp = temp->next;
+    }
+
+}
+
 int main() {
-    vector<int> arr = {1,2,3,4,5};
 
-    Node* head = convertArrToLL(arr);
+    vector<int>arr = {0,1,2,3,4,5};
 
-    cout<<head->data<<endl;
+    Node* head = convert_arr_to_LL(arr);
+    traversal_in_LL(head);
+    
+    head = delete_head(head);
+
+    cout<<endl<<"Head ater Deletion : "<<head->data<<endl;
+    traversal_in_LL(head);
 
     return 0;
 }
